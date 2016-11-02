@@ -1,0 +1,73 @@
+﻿<Window x:Class="GuilanDataStructures.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuilanDataStructures"
+        x:Name="mainWindow"
+        mc:Ignorable="d" MinHeight="350" MinWidth="525" WindowStartupLocation="CenterScreen"
+        Title="Guilan University Data Structure" Height="470" Width="700" FontFamily="{StaticResource Sahel}" Icon="Resources/Images/Database64.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="35" />
+            <RowDefinition />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDAE0FF" Offset="0"/>
+                    <GradientStop Color="#FFA0AEFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Border FlowDirection="RightToLeft" BorderThickness="0,0,0,1" BorderBrush="#FFA9AEFF">
+                <DockPanel>
+                    <Image DockPanel.Dock="Left" Source="/Resources/Images/Database64.png"
+                       Width="50" RenderOptions.BitmapScalingMode="HighQuality"
+                       Height="50" Stretch="Fill" HorizontalAlignment="Left" Margin="10 0" />
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Left" DockPanel.Dock="Left">
+                        <TextBlock Foreground="#FF004D97" FontSize="18">نرم‌افزار ارائه پروژه های درس ساختمان داده</TextBlock>
+                        <TextBlock Foreground="#FF004D97">استاد میر روشندل، دانشگاه گیلان</TextBlock>
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Center" Margin="10 0" Orientation="Vertical" HorizontalAlignment="Right" DockPanel.Dock="Right">
+                        <TextBlock Foreground="#FF004D97">حسین ابراهیم پور</TextBlock>
+                        <TextBlock Foreground="#FF004D97" HorizontalAlignment="Center">۹۴۰۱۲۲۶۹۰۰۸</TextBlock>
+                    </StackPanel>
+                </DockPanel>
+                
+            </Border>
+        </Grid>
+        <Grid Grid.Row="1" Background="#FFF3F3F3">
+            <Border BorderThickness="0,0,0,1" BorderBrush="#FFDDDDDD">
+                <Grid FlowDirection="RightToLeft"  >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Column="0" Margin="10 0" VerticalAlignment="Center" HorizontalAlignment="Left"
+                               Foreground="Gray">پروژه ای را جهت مشاهده کد و بررسی انتخاب کنید:</TextBlock>
+                    <ComboBox Grid.Column="1" Margin="0 5 5 5" HorizontalAlignment="Stretch" x:Name="selectProjectCombo" SelectedIndex="0" SelectionChanged="selectProjectCombo_SelectionChanged">
+                        
+                    </ComboBox>
+                    <Button Grid.Column="2" Margin="5 5" Width="100" x:Name="showSourceButton" HorizontalAlignment="Right">
+                        نمایش سورس
+                    </Button>
+                </Grid>
+            </Border>
+        </Grid>
+        <Frame Grid.Row="2" x:Name="mainFrame" NavigationUIVisibility="Hidden" />
+        <Grid Grid.Row="3">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFDAE0FF" Offset="0"/>
+                    <GradientStop Color="#FFA0AEFF" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Border BorderThickness="0,1,0,0" BorderBrush="#FFA8ADFF">
+                
+            </Border>
+        </Grid>
+    </Grid>
+</Window>

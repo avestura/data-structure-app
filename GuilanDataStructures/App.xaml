@@ -1,0 +1,16 @@
+﻿<Application x:Class="GuilanDataStructures.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GuilanDataStructures"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <FontFamily x:Key="Sahel">Sahel, pack://application:,,,/GuilanDataStructures;Component/Resources/#Sahel</FontFamily>
+            <FontFamily x:Key="Iran">pack://application:,,,/GuilanDataStructures;Component/Resources/#IRAN</FontFamily>
+        </ResourceDictionary>
+
+      
+        
+    </Application.Resources>
+</Application>

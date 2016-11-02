@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GuilanDataStructures", "GuilanDataStructures\GuilanDataStructures.csproj", "{EA3D4AF4-F382-4215-A4FB-1C77F15D8416}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructureConsole", "DataStructureConsole\DataStructureConsole.csproj", "{FCD12FBB-D155-40A0-9B7C-CF5221ABCD77}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA3D4AF4-F382-4215-A4FB-1C77F15D8416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA3D4AF4-F382-4215-A4FB-1C77F15D8416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA3D4AF4-F382-4215-A4FB-1C77F15D8416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA3D4AF4-F382-4215-A4FB-1C77F15D8416}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCD12FBB-D155-40A0-9B7C-CF5221ABCD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCD12FBB-D155-40A0-9B7C-CF5221ABCD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCD12FBB-D155-40A0-9B7C-CF5221ABCD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCD12FBB-D155-40A0-9B7C-CF5221ABCD77}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
