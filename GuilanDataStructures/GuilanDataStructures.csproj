@@ -38,11 +38,20 @@
     </StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>accessories_calculator_128px_1174890_easyicon.net.ico</ApplicationIcon>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="GraphLayout">
+      <HintPath>..\GraphLayout.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -52,6 +61,12 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="TreeContainer">
+      <HintPath>..\TreeContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -61,11 +76,133 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Animation.cs" />
+    <Compile Include="CommonControls\ButtonBoxControls\GeoLines\Horizontal.xaml.cs">
+      <DependentUpon>Horizontal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoLines\LeftToDown.xaml.cs">
+      <DependentUpon>LeftToDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoLines\LeftToUp.xaml.cs">
+      <DependentUpon>LeftToUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoLines\RightToDown.xaml.cs">
+      <DependentUpon>RightToDown.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoLines\UpToRight.xaml.cs">
+      <DependentUpon>UpToRight.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoLines\Vertical.xaml.cs">
+      <DependentUpon>Vertical.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoPaths\Down.xaml.cs">
+      <DependentUpon>Down.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoPaths\Left.xaml.cs">
+      <DependentUpon>Left.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoPaths\Right.xaml.cs">
+      <DependentUpon>Right.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\GeoPaths\Up.xaml.cs">
+      <DependentUpon>Up.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ButtonBoxControls\MazeButton.cs" />
+    <Compile Include="CommonControls\ButtonBoxControls\ResizableButtonBox.xaml.cs">
+      <DependentUpon>ResizableButtonBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CommonControls\ProjectCard.xaml.cs">
+      <DependentUpon>ProjectCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataStructures\BinaryTree.cs" />
+    <Compile Include="DataStructures\Generic\Treap.cs" />
+    <Compile Include="DataStructures\Generic\BinaryTree.cs" />
+    <Compile Include="DataStructures\Generic\PriorityQueue.cs" />
+    <Compile Include="DataStructures\Huffman\BinaryTree.cs" />
+    <Compile Include="DataStructures\Huffman\Decoder.cs" />
+    <Compile Include="DataStructures\Huffman\Encoder.cs" />
+    <Compile Include="DataStructures\Huffman\Utilities.cs" />
+    <Compile Include="DataStructures\PriorityQueue.cs" />
     <Compile Include="Extentions.cs" />
-    <Compile Include="Projects\CompressedText.xaml.cs">
+    <Compile Include="ProjectSelector.xaml.cs">
+      <DependentUpon>ProjectSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project2\CharFrequency.xaml.cs">
+      <DependentUpon>CharFrequency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project2\CompressedText.xaml.cs">
       <DependentUpon>CompressedText.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Projects\Project2\DecompressHuffman.xaml.cs">
+      <DependentUpon>DecompressHuffman.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project2\MainHost.xaml.cs">
+      <DependentUpon>MainHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project2\TreeView.xaml.cs">
+      <DependentUpon>TreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project3\NullChild.xaml.cs">
+      <DependentUpon>NullChild.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project3\Treap.xaml.cs">
+      <DependentUpon>Treap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project4\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Projects\Project4\ProjectDescribe.xaml.cs">
+      <DependentUpon>ProjectDescribe.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs" />
+    <Page Include="CommonControls\ButtonBoxControls\GeoLines\Horizontal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoLines\LeftToDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoLines\LeftToUp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoLines\RightToDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoLines\UpToRight.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoLines\Vertical.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoPaths\Down.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoPaths\Left.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoPaths\Right.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\GeoPaths\Up.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ButtonBoxControls\ResizableButtonBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonControls\ProjectCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -78,17 +215,53 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Projects\BoresheMostatil.xaml">
+    <Page Include="ProjectSelector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Projects\CompressedText.xaml">
+    <Page Include="Projects\Project1\BoresheMostatil.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project2\CharFrequency.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project2\CompressedText.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project2\DecompressHuffman.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project2\MainHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project2\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project3\NullChild.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project3\Treap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project4\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Projects\Project4\ProjectDescribe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Projects\BoresheMostatil.xaml.cs">
+    <Compile Include="Projects\Project1\BoresheMostatil.xaml.cs">
       <DependentUpon>BoresheMostatil.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -122,10 +295,32 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="accessories_calculator_128px_1174890_easyicon.net.ico" />
+    <Resource Include="AppIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\Database64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Tree48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\AirPlay.png" />
+    <Resource Include="Resources\Images\SourceCode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Archive-64.png" />
+    <Resource Include="Resources\Images\Hard to Find-64.png" />
+    <Resource Include="Resources\Images\Left View-64.png" />
+    <Resource Include="Resources\Images\Pyramids-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\Guilan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\RedFlag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\BlueFlag.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

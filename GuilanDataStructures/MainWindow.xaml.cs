@@ -14,6 +14,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GuilanDataStructures.Projects;
+using GuilanDataStructures.DataStructures;
+using GuilanDataStructures.DataStructures.Generic;
 
 namespace GuilanDataStructures
 {
@@ -23,61 +25,40 @@ namespace GuilanDataStructures
     public partial class MainWindow : Window
     {
 
-        private List<PagedComboBoxItem> projects = new List<PagedComboBoxItem>()
-        {
-            new PagedComboBoxItem(){
-                Content = "پروژه اول - برش مستطیل" ,
-                NavigatePage = new BoresheMostatil()
-            },
-            new PagedComboBoxItem()
-            {
-                Content = "پروژه دوم - فشرده سازی متن",
-                NavigatePage = new CompressedText()
-            }
-        };
 
 
-        
+         ProjectSelector selectorPage = new ProjectSelector();
+
 
         public MainWindow()
         {
+            
             InitializeComponent();
-            selectProjectCombo.ItemsSource = projects;
+            //selectProjectCombo.ItemsSource = projects;
+            App.MainWindowApp = this;
+            
         }
 
 
 
-        class PagedComboBoxItem : ComboBoxItem
+   
+
+        private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
+            
 
-
-            public Page NavigatePage
-            {
-                get { return (Page)GetValue(NavigatePageProperty); }
-                set { SetValue(NavigatePageProperty, value); }
-            }
-
-            // Using a DependencyProperty as the backing store for NavigatePage.  This enables animation, styling, binding, etc...
-            public static readonly DependencyProperty NavigatePageProperty =
-                DependencyProperty.Register("NavigatePage", typeof(Page), typeof(PagedComboBoxItem), null);
-
-            public PagedComboBoxItem()
-            {
-
-            }
 
         }
 
-        private void selectProjectCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void mainFrame_Loaded(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                mainFrame.Navigate(((PagedComboBoxItem)selectProjectCombo.SelectedItem).NavigatePage);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            mainFrame.Navigate(selectorPage);
+        }
+
+        private void showSourceButton_Click(object sender, RoutedEventArgs e)
+        {
+            mainFrame.Navigate(selectorPage);
+            backToHome.HideUsingLinearAnimation();
         }
     }
 }

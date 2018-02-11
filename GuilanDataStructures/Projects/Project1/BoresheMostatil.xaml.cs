@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using GuilanDataStructures;
 
-namespace GuilanDataStructures.Projects
+namespace GuilanDataStructures.Projects.Project1
 {
     /// <summary>
     /// Interaction logic for BoresheMostatil.xaml
@@ -33,9 +33,10 @@ namespace GuilanDataStructures.Projects
             {
                 visualView.Children.Clear();
 
-                // There is no data
+                // If there is no data
                 if (token == null || token[0] == string.Empty)
                 {
+                    // Create a simple text message to display there is no data to draw
                     var inputIsEmpty = new TextBlock()
                     {
                         HorizontalAlignment = HorizontalAlignment.Center,
@@ -45,10 +46,10 @@ namespace GuilanDataStructures.Projects
                     };
                     visualView.Children.Add(inputIsEmpty);
                 }
-                // There is data to draw
+                // If there is data to draw
                 else
                 {
-
+                    // Create a simple text message to display rectangles are being drawn
                     var rendering = new TextBlock()
                     {
                         HorizontalAlignment = HorizontalAlignment.Center,
@@ -56,13 +57,22 @@ namespace GuilanDataStructures.Projects
                         Text = "در حال ترسیم...",
                         Foreground = Brushes.DodgerBlue
                     };
+
                     var rects = new List<Rectangle>();
+
                     int[] numbers = new int[token.Length];
-                    for (int i = 0; i < token.Length; i++) numbers[i] = int.Parse(token[i]);
+
+                    // Parse all string values to integer ones
+                    numbers = Array.ConvertAll(token, int.Parse);
+
+                    // Finding maximum height. Needed to calculate height rectangles can fit to the viewport
                     int maxHeight = numbers.Max();
+
                     double maximumView = visualView.ActualHeight;
+
                     double ratio = maximumView / maxHeight;
 
+                    // Add rectangles one by one
                     for (int i = 0; i < token.Length; i++)
                     {
                         rects.Add(new Rectangle()
@@ -81,6 +91,8 @@ namespace GuilanDataStructures.Projects
             catch (Exception ex)
             {
                 visualView.Children.Clear();
+
+                // Create a simple text message to display there is an error in your input
                 var errorDrawing = new TextBlock()
                 {
                     HorizontalAlignment = HorizontalAlignment.Center,
@@ -98,21 +110,21 @@ namespace GuilanDataStructures.Projects
         {
             try
             {
-                string[] token = inputTextBox.Text.TrimEnd(' ').Split(' ');
+                string[] token = inputTextBox.Text.TrimStart(' ').TrimEnd(' ').Split(' ');
                 int tokenLen = token.Length;
 
-              
-                    Task.Run(() =>
-                    {
-                        Dispatcher.Invoke(() => { DrawVisualRectangles(token); });
-                    });
+              // Async operation to draw visual rectangles using a single-thread async task
+              Task.Run(() =>
+              {
+                Dispatcher.Invoke(() => { DrawVisualRectangles(token); });
+              });
                 
 
-                int maxArea = CalculateMaximumArea(Array.ConvertAll(token, int.Parse));
+              int maxArea = CalculateMaximumArea(Array.ConvertAll(token, int.Parse));
 
 
-                resultTextBox.Background = Brushes.White;
-                resultTextBox.Text = maxArea.ToString();
+              resultTextBox.Background = Brushes.White;
+              resultTextBox.Text = maxArea.ToString();
 
             }
             catch (Exception ex)
@@ -134,7 +146,7 @@ namespace GuilanDataStructures.Projects
                 resultTextBox.Background = Brushes.LightYellow;
                 resultTextBox.Text = "لطفا مقداری را وارد نمایید";
 
-
+                // Dispaly there is no data to preview in viewport
                 Task.Run(() =>
                 {
                     Dispatcher.Invoke(() => { DrawVisualRectangles(null); });
@@ -148,14 +160,29 @@ namespace GuilanDataStructures.Projects
 
         private int CalculateMaximumArea(int[] heights)
         {
+            // Stack to hold Index to Values
             var stack = new Stack<int>();
+
+            // Number of elements in Heights Array
             var count = heights.Length;
+
+            // Result to be returned
             int result = 0;
 
+            // Itrate in heights
             int itrator = 0;
+
             while(itrator < count)
             {
+                /*
+                 * Index of Itrator should be pushed in stack in only two conditions:
+                 * 1- Stack is empty
+                 * 2- Heigh of current item is higher than element with index of top of the stack
+                 */
                 if (stack.IsEmpty() || heights[itrator] >= heights[stack.Peek()]) stack.Push(itrator++);
+                /*
+                 * If none of above conditions are true, it's time to calculate created areas
+                 */
                 else
                 {
                     int popedValue = stack.Pop();
@@ -168,7 +195,7 @@ namespace GuilanDataStructures.Projects
                    
                 }
             }
-            // Recalculate un-empty stack
+            // Recalculate un-empty stack using method above in "else" block
             while (!stack.IsEmpty())
             {
                 int popedValue = stack.Pop();
@@ -185,6 +212,7 @@ namespace GuilanDataStructures.Projects
 
         private void resultTextBox_Loaded(object sender, RoutedEventArgs e)
         {
+            // Initialize example text
             inputTextBox.Text = "5 4 3 2 1";
             CalculationProcess();
         }

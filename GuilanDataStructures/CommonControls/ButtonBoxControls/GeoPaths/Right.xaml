@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="GuilanDataStructures.CommonControls.ButtonBoxControls.GeoPaths.Right"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GuilanDataStructures.CommonControls.ButtonBoxControls.GeoPaths"
+             mc:Ignorable="d" x:Name="control"
+             d:DesignHeight="16" d:DesignWidth="16">
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames
+                Storyboard.TargetName="control"
+                Storyboard.TargetProperty="Opacity" RepeatBehavior="Forever"
+                Duration="0:0:1">
+                        <LinearDoubleKeyFrame Value="0.4" KeyTime="0:0:0" />
+                        <LinearDoubleKeyFrame Value="1" KeyTime="0:0:0.5" />
+                        <LinearDoubleKeyFrame Value="0.4" KeyTime="0:0:1" />
+                    </DoubleAnimationUsingKeyFrames>
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Path Data="M2,14L2,14L8,3L14,14" StrokeThickness="2" RenderTransformOrigin="0.5,0.5">
+        <Path.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform Angle="270"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Path.RenderTransform>
+        <Path.Stroke>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF074800" Offset="0"/>
+                <GradientStop Color="#FF4DF93B" Offset="1"/>
+            </LinearGradientBrush>
+        </Path.Stroke>
+
+    </Path>
+</UserControl>

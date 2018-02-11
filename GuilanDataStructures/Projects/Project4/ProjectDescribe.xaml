@@ -1,0 +1,45 @@
+﻿<Page x:Class="GuilanDataStructures.Projects.Project4.ProjectDescribe"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GuilanDataStructures.Projects.Project4"
+      mc:Ignorable="d" Background="White" FontFamily="{StaticResource Sahel}"
+      d:DesignHeight="300" d:DesignWidth="500" x:Name="describePage"
+      Title="ProjectDescribe">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="describePage"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="0" Duration="0:0:0.5"
+                                     To="1" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <StackPanel Margin="20" FlowDirection="RightToLeft">
+        <Border BorderThickness="0 0 0 1" BorderBrush="LightGray">
+            <TextBlock Margin="0 0 0 3">پروژه مارپیچ</TextBlock>
+        </Border>
+        <TextBlock Margin="3" TextWrapping="Wrap" FontSize="11" TextAlignment="Justify">
+            این بازي داراي راههاي تودرتو است که باید از یک نقطه وارد و از نقطه اي دیگر خارج
+شوید. بنابراین در صفحهاي که مسیرهاي متفاوت و پیچهاي زیادي دارد رخ میدهد و شی مورد نظر باید بتواند
+به عنوان مانع در maze از نقطه شروع بازي، مسیر را پیدا کند تا به نقطه پایان برسد. برخی خانههاي صفحه
+نظر گرفته میشوند و این بدان معناست که نمیتوان وارد این خانه ها شد
+        </TextBlock>
+        <Border Margin="0 0 0 2" BorderThickness="0 0 0 1" BorderBrush="LightGray">
+            <TextBlock Margin="0 0 0 3">راهنما</TextBlock>
+        </Border>
+        <TextBlock>
+            <Span FontWeight="Bold" Foreground="DodgerBlue">کلیک:</Span> ایجاد خانه های مانع در صفحه<LineBreak/>
+            <Span FontWeight="Bold" Foreground="DodgerBlue">کشیدن و رها کردن گوشه صفحه:</Span> تغییر اندازه زمین مارپیچ<LineBreak/>
+            <Span FontWeight="Bold" Foreground="DodgerBlue">راست کلیک:</Span> ایجاد و یا حذف کردن نقاط شروع و پایان<LineBreak/>
+        </TextBlock>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Click="Button_Click" Width="Auto" Height="30" FontSize="11" Content="استفاده از الگوریتم جستجوی سطح اول (BFS)" Margin="5 0" Padding="5 0"/>
+            <Button Click="Button_Click_1" Width="Auto" Height="30" FontSize="11" Content="استفاده از الگوریتم جستجوی عمق اول (DFS)" Padding="5 0" />
+        </StackPanel>
+    </StackPanel>
+</Page>

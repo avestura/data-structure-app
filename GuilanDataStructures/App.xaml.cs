@@ -14,6 +14,10 @@ namespace GuilanDataStructures
     /// </summary>
     public partial class App : Application
     {
+
+        public static MainWindow MainWindowApp { get; set; }
+        public static Projects.Project2.MainHost Project2MainHost { get; set; }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);

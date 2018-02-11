@@ -1,0 +1,50 @@
+﻿<Page x:Class="GuilanDataStructures.Projects.Project2.DecompressHuffman"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GuilanDataStructures.Projects.Project2"
+      mc:Ignorable="d" Background="White" FontFamily="{StaticResource Sahel}"
+      d:DesignHeight="600" d:DesignWidth="500" x:Name="decompressPage"
+      Title="DecompressHuffman">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="decompressPage"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="0" Duration="0:0:0.5"
+                                     To="1" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid>
+        <StackPanel Margin="0 10" Orientation="Vertical">
+            <TextBlock HorizontalAlignment="Right" Margin="10 0" FlowDirection="RightToLeft">
+                آدرس فایل باینری حاوی کد هافمن را وارد کنید:
+            </TextBlock>
+            <Grid FlowDirection="RightToLeft" Visibility="Visible" Name="browsePanel" Margin="10 8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="inputURLTextbox" Margin="0 0 5 0" TextAlignment="Center" Grid.Column="0" IsReadOnly="True" />
+                <Button Grid.Column="1" Width="50" Click="openInput">...</Button>
+            </Grid>
+            <TextBlock HorizontalAlignment="Right" Margin="10 0" FlowDirection="RightToLeft">
+                بازگزدانی متن:
+            </TextBlock>
+            <Grid FlowDirection="RightToLeft" Visibility="Visible" Name="exportPanel" Margin="10 8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="outputURLTextbox" Margin="0 0 5 0" TextAlignment="Center" Grid.Column="0" IsReadOnly="True" />
+                <Button Grid.Column="1" Width="50" Click="outputOpen">...</Button>
+            </Grid>
+            <Button x:Name="decodeHuffman" HorizontalAlignment="Left" Margin="10 0" Width="210" Height="30" Content="بازگردانی فایل فشرده شده به فایل متنی" Click="decodeHuffman_Click" />
+
+        </StackPanel>
+    </Grid>
+</Page>

@@ -8,9 +8,9 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("GuilanDataStructures")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Aryan Ebrahimpour - 94012269008")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Guilan university")]
 [assembly: AssemblyProduct("GuilanDataStructures")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]

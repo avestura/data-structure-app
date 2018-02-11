@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GuilanDataStructures.Projects
+namespace GuilanDataStructures.CommonControls.ButtonBoxControls.GeoLines
 {
     /// <summary>
-    /// Interaction logic for CompressedText.xaml
+    /// Interaction logic for LeftToDown.xaml
     /// </summary>
-    public partial class CompressedText : Page
+    public partial class LeftToDown : UserControl
     {
-        public CompressedText()
+        public LeftToDown()
         {
             InitializeComponent();
         }

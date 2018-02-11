@@ -1,0 +1,85 @@
+﻿<Page x:Class="GuilanDataStructures.Projects.Project2.CompressedText"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GuilanDataStructures.Projects.Project2"
+  mc:Ignorable="d" Background="White" FontFamily="{StaticResource Sahel}"
+      d:DesignHeight="600" d:DesignWidth="500" x:Name="compressPage"
+      Title="CompressedText">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="compressPage"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="0" Duration="0:0:0.5"
+                                     To="1" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+    <Grid FlowDirection="RightToLeft" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBlock Margin="0 0 0 5">نوع ورودی متن را وارد کنید:</TextBlock>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <RadioButton x:Name="editorOption" Checked="TextEditorOptionChosen" Margin="10 0" IsChecked="True">نوشتن متن در ویرایشگر نرم افزار</RadioButton>
+                    <RadioButton x:Name="loadOption" Checked="LoadTextOptionChosen" Margin="10 0">خواندن از فایل</RadioButton>
+                </StackPanel>
+                <Button Margin="0,0,10,0" Grid.Column="1" Height="40" Click="Button_Click">
+                    <Button.ToolTip>
+                        نمایش درخت هافمن
+                    </Button.ToolTip>
+                    <Image Stretch="Uniform" Source="/GuilanDataStructures;component/Resources/Images/Tree48.png" />
+                </Button>
+            </Grid>
+
+            <StackPanel Visibility="Visible" Name="textEditorPanel" Margin="10 8">
+                <Border RenderOptions.EdgeMode="Aliased" Height="30" BorderThickness="1" BorderBrush="LightGray" Background="#FFF0F0F0">
+                    <TextBlock RenderOptions.EdgeMode="Unspecified" Margin="8 0" FontSize="12" VerticalAlignment="Center" Foreground="Gray">متنی را جهت فشرده سازی به روش درخت هافمن وارد کنید:</TextBlock>
+                </Border>
+                <Border RenderOptions.EdgeMode="Aliased" BorderThickness="1 0 1 1" BorderBrush="LightGray">
+                    <TextBox x:Name="inputData"
+                             BorderThickness="0" Margin="2" 
+                             RenderOptions.EdgeMode="Unspecified"
+                             AcceptsReturn="True" MinHeight="100"
+                             MaxHeight="150"
+                             ScrollViewer.VerticalScrollBarVisibility="Auto"
+                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"></TextBox>
+                </Border>
+            </StackPanel>
+            <Grid Visibility="Visible" Name="browsePanel" Margin="10 8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="inputURLTextbox" Margin="0 0 5 0" TextAlignment="Center" Grid.Column="0" IsReadOnly="True" />
+                <Button Grid.Column="1" Width="50" Click="openInput">...</Button>
+            </Grid>
+            <TextBlock>
+                فشرده سازی متن:
+            </TextBlock>
+            <Grid Visibility="Visible" Name="exportPanel" Margin="10 8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="outputURLTextbox" Margin="0 0 5 0" TextAlignment="Center" Grid.Column="0" IsReadOnly="True" />
+                <Button Grid.Column="1" Width="50" Click="outputOpen">...</Button>
+            </Grid>
+            <Button x:Name="buildHuffman" HorizontalAlignment="Right" Margin="10 0" Width="115" Height="30" Content="فشرده سازی متن" Click="buildHuffman_Click" />
+
+            
+
+        </StackPanel>
+
+    </Grid>
+</Page>

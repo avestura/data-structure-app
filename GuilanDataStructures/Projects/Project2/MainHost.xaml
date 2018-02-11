@@ -1,0 +1,46 @@
+﻿<Page x:Class="GuilanDataStructures.Projects.Project2.MainHost"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:GuilanDataStructures.Projects.Project2"
+      mc:Ignorable="d" Background="White" FontFamily="{StaticResource Sahel}"
+      d:DesignHeight="600" d:DesignWidth="500" x:Name="project2MainHostPage"
+      Title="MainHost">
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="project2MainHostPage"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="0" Duration="0:0:0.5"
+                                     To="1" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="50" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid Background="#FFF4F4F4" Grid.Row="0">
+            <StackPanel  VerticalAlignment="Center"
+                    FlowDirection="RightToLeft"
+                    HorizontalAlignment="Center"
+                    Orientation="Horizontal" 
+                    >
+                <RadioButton IsChecked="True" x:Name="compressHuffmanButton" Style="{DynamicResource RadioButtonToggle}" Padding="10 3" Checked="compressHuffman_Checked">فشرده سازی از متن به کد هافمن</RadioButton>
+                <TextBlock Width="10" />
+                <RadioButton Style="{DynamicResource RadioButtonToggle}" x:Name="decompressHuffmanButton" Padding="10 3" Checked="decompressHuffman_Checked">دیکد سازی کد هافمن به متن</RadioButton>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Border BorderThickness="0 1 0 0" BorderBrush="#FFE4E4E4">
+                <Frame x:Name="hostFrame" NavigationUIVisibility="Hidden" Loaded="hostFrame_Loaded" />
+            </Border>
+        </Grid>
+    </Grid>
+    
+</Page>

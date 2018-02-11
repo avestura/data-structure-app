@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="GuilanDataStructures.Projects.Project2.CharFrequency"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GuilanDataStructures.Projects.Project2"
+             mc:Ignorable="d" 
+             d:DesignHeight="15" d:DesignWidth="35">
+    <Border x:Name="outerBorder" BorderThickness="1">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Border x:Name="innerBorder"  BorderThickness="0 0 1 0">
+                <TextBlock FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5 3" Grid.Column="0" x:Name="char"></TextBlock>
+            </Border>
+            <TextBlock FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="5 3" Grid.Column="1" x:Name="freq"></TextBlock>
+
+        </Grid>
+    </Border>
+</UserControl>

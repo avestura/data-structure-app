@@ -1,17 +1,18 @@
-﻿<Page x:Class="GuilanDataStructures.Projects.CompressedText"
+﻿<Page x:Class="GuilanDataStructures.Projects.Project4.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:GuilanDataStructures.Projects"
-  mc:Ignorable="d" Background="White" FontFamily="{StaticResource Sahel}"
-      d:DesignHeight="300" d:DesignWidth="450" x:Name="compressPage"
-      Title="CompressedText">
+      xmlns:local="clr-namespace:GuilanDataStructures.Projects.Project4"
+      xmlns:ccb="clr-namespace:GuilanDataStructures.CommonControls.ButtonBoxControls"
+      mc:Ignorable="d" Background="White" x:Name="mainPage"
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="MainPage">
     <Page.Triggers>
         <EventTrigger RoutedEvent="Loaded">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Storyboard.TargetName="compressPage"
+                    <DoubleAnimation Storyboard.TargetName="mainPage"
                                      Storyboard.TargetProperty="Opacity"
                                      From="0" Duration="0:0:0.5"
                                      To="1" />
@@ -19,9 +20,7 @@
             </BeginStoryboard>
         </EventTrigger>
     </Page.Triggers>
-    <Grid Margin="10">
-        <Grid.RowDefinitions>
-            
-        </Grid.RowDefinitions>
+    <Grid>
+        <ccb:ResizableButtonBox UseDFS="{Binding ElementName=mainPage,Path=UseDFS}" />
     </Grid>
 </Page>
