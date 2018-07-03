@@ -1,16 +1,21 @@
-﻿<Window x:Class="GuilanDataStructures.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:GuilanDataStructures"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        x:Name="mainWindow" Title="Guilan University Data Structure"
-        Width="1000" Height="630" MinWidth="525"
-        MinHeight="500"
-        FontFamily="{StaticResource Sahel}"
-        Icon="Resources/Images/Database64.png"
-        Loaded="mainWindow_Loaded"
-        WindowStartupLocation="CenterScreen" mc:Ignorable="d">
+﻿<Window
+    x:Class="GuilanDataStructures.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:GuilanDataStructures"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="mainWindow"
+    Title="Guilan University Data Structure"
+    Width="1000"
+    Height="630"
+    MinWidth="525"
+    MinHeight="500"
+    FontFamily="{StaticResource Sahel}"
+    Icon="Resources/Images/Database64.png"
+    Loaded="mainWindow_Loaded"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="70" />
@@ -18,32 +23,27 @@
             <RowDefinition />
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.Background>
-                <LinearGradientBrush MappingMode="RelativeToBoundingBox" StartPoint="0,0.5" EndPoint="1,0.5">
-                    <GradientStop Offset="0.25" Color="#FF3F5EFF" />
-                    <GradientStop Offset="1" Color="#FFF4F6FF" />
-                </LinearGradientBrush>
-
-            </Grid.Background>
-            <Border BorderBrush="#FFA9AEFF" BorderThickness="0,0,0,1"
-                    FlowDirection="RightToLeft">
+        <Grid Grid.Row="0" Background="#0984e3">
+            <Border BorderBrush="#FFA9AEFF" BorderThickness="0,0,0,1">
                 <DockPanel>
-                    <Image Width="50" Height="50" Margin="10,0"
-                           HorizontalAlignment="Left" DockPanel.Dock="Left"
-                           RenderOptions.BitmapScalingMode="HighQuality"
-                           Source="/Resources/Images/Database64.png" Stretch="Fill" />
-                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center"
-                                DockPanel.Dock="Left">
-                        <TextBlock FontSize="18" Foreground="#FF004D97">نرم‌افزار ارائه پروژه های درس ساختمان داده</TextBlock>
-                        <TextBlock Foreground="#FF004D97">استاد میر روشندل، دانشگاه گیلان</TextBlock>
+
+                    <StackPanel
+                        Margin="15,0,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Left">
+                        <TextBlock FontSize="18" Foreground="White">Data Structure Projects of Guilan University</TextBlock>
+                        <TextBlock Foreground="White">Professor: Dr. Mirroshandel</TextBlock>
                     </StackPanel>
-                    <StackPanel Margin="10,0" HorizontalAlignment="Right"
-                                VerticalAlignment="Center" DockPanel.Dock="Right"
-                                Orientation="Vertical">
+                    <StackPanel
+                        Margin="10,0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Right"
+                        Orientation="Vertical">
                         <!--  Previous Color: FF004D97  -->
-                        <TextBlock Foreground="#FFCFDCFF">حسین ابراهیم پور</TextBlock>
-                        <TextBlock HorizontalAlignment="Center" Foreground="#FFCFDCFF">۹۴۰۱۲۲۶۹۰۰۸</TextBlock>
+                        <TextBlock Foreground="White">Aryan Ebrahimpour</TextBlock>
+                        <TextBlock HorizontalAlignment="Center" Foreground="White">94012269008</TextBlock>
                     </StackPanel>
                 </DockPanel>
 
@@ -51,40 +51,52 @@
         </Grid>
         <Grid Grid.Row="1" Background="#FFF3F3F3">
             <Border BorderBrush="#FFDDDDDD" BorderThickness="0,0,0,1">
-                <Grid FlowDirection="RightToLeft">
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                         <ColumnDefinition Width="Auto" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Column="0" Margin="10,0" HorizontalAlignment="Left"
-                               VerticalAlignment="Center" Foreground="Gray">
-                        پروژه ای را جهت مشاهده کد و بررسی انتخاب کنید:
+                    <TextBlock
+                        Grid.Column="0"
+                        Margin="10,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        Foreground="Gray">
+                        Select a project to run the demo or browse the source code:
                     </TextBlock>
-                    <ComboBox x:Name="selectProjectCombo" Grid.Column="1" Margin="0,5,5,5"
-                              HorizontalAlignment="Stretch" SelectedIndex="0"
-                              Visibility="Collapsed" />
-                    <Button x:Name="backToHome" Grid.Column="2" Width="100"
-                            Margin="5,5" HorizontalAlignment="Right"
-                            Click="showSourceButton_Click" Visibility="Hidden">
-                        بازگشت به خانه
+                    <ComboBox
+                        x:Name="selectProjectCombo"
+                        Grid.Column="1"
+                        Margin="0,5,5,5"
+                        HorizontalAlignment="Stretch"
+                        SelectedIndex="0"
+                        Visibility="Collapsed" />
+                    <Button
+                        x:Name="backToHome"
+                        Grid.Column="2"
+                        Width="100"
+                        Margin="5,5"
+                        HorizontalAlignment="Right"
+                        Click="showSourceButton_Click"
+                        Visibility="Hidden">
+                        Return to Home
                     </Button>
                 </Grid>
             </Border>
         </Grid>
-        <Frame x:Name="mainFrame" Grid.Row="2" Loaded="mainFrame_Loaded"
-               NavigationUIVisibility="Hidden" />
-        <Grid Grid.Row="3">
-            <Grid.Background>
-                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
-                    <GradientStop Offset="0.005" Color="#FFD8DDF7" />
-                    <GradientStop Offset="1" Color="#FF779CB6" />
-                </LinearGradientBrush>
-            </Grid.Background>
-            <Border BorderBrush="#FFA8ADFF" BorderThickness="0,1,0,0">
-                <StackPanel HorizontalAlignment="Center" FlowDirection="RightToLeft"
-                            Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" Foreground="#FF383489">دانشگاه گیلان، پاییز 95</TextBlock>
+        <Frame
+            x:Name="mainFrame"
+            Grid.Row="2"
+            Loaded="mainFrame_Loaded"
+            NavigationUIVisibility="Hidden" />
+        <Grid Grid.Row="3" Background="#FFE8E8E8">
+            <Border BorderBrush="#FFB9B9B9" BorderThickness="0,1,0,0">
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    FlowDirection="RightToLeft"
+                    Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Foreground="#FF5C5C5C">Guilan University, Fall 95</TextBlock>
                 </StackPanel>
             </Border>
         </Grid>

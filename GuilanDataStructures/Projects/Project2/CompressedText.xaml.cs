@@ -79,7 +79,7 @@ namespace GuilanDataStructures.Projects.Project2
                     buildHuffman.Dispatcher.Invoke(() =>
                     {
                         buildHuffman.IsEnabled = false;
-                        buildHuffman.Content = "در حال فشرده سازی...";
+                        buildHuffman.Content = "Compressing...";
                     });
                     Thread.Sleep(100);
                     Dispatcher.Invoke(() =>
@@ -90,11 +90,10 @@ namespace GuilanDataStructures.Projects.Project2
                     buildHuffman.Dispatcher.Invoke(() =>
                     {
                         buildHuffman.IsEnabled = true;
-                        buildHuffman.Content = "فشرده سازی متن";
+                        buildHuffman.Content = "Compress";
                     });
                 });
 
-                
             }
             else
             {
@@ -103,7 +102,7 @@ namespace GuilanDataStructures.Projects.Project2
                     buildHuffman.Dispatcher.Invoke(() =>
                     {
                         buildHuffman.IsEnabled = false;
-                        buildHuffman.Content = "در حال فشرده سازی...";
+                        buildHuffman.Content = "Compressing...";
                     });
                     Thread.Sleep(100);
                     Dispatcher.Invoke(() =>
@@ -114,10 +113,9 @@ namespace GuilanDataStructures.Projects.Project2
                     buildHuffman.Dispatcher.Invoke(() =>
                     {
                         buildHuffman.IsEnabled = true;
-                        buildHuffman.Content = "فشرده سازی متن";
+                        buildHuffman.Content = "Compress";
                     });
-                    
-                    
+
                 });
             }
         }
@@ -130,7 +128,7 @@ namespace GuilanDataStructures.Projects.Project2
             }
             else
             {
-                MessageBox.Show("ابتدا متن را به فایل فشرده تبدیل کنید", "خطا", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Compress text to a compressed file first.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
         }
     }

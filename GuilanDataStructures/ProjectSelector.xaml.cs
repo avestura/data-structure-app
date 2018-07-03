@@ -57,8 +57,5 @@ namespace GuilanDataStructures
             NavigateTo(project4);
         }
 
-
- 
-
     }
 }

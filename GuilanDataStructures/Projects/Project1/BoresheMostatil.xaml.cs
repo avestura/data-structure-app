@@ -41,7 +41,7 @@ namespace GuilanDataStructures.Projects.Project1
                     {
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Center,
-                        Text = "داده ای برای ترسیم بصری در دسترس نیست",
+                        Text = "No data to visualize!",
                         Foreground = Brushes.DodgerBlue
                     };
                     visualView.Children.Add(inputIsEmpty);
@@ -54,7 +54,7 @@ namespace GuilanDataStructures.Projects.Project1
                     {
                         HorizontalAlignment = HorizontalAlignment.Center,
                         VerticalAlignment = VerticalAlignment.Center,
-                        Text = "در حال ترسیم...",
+                        Text = "Drawing...",
                         Foreground = Brushes.DodgerBlue
                     };
 
@@ -98,11 +98,11 @@ namespace GuilanDataStructures.Projects.Project1
                     HorizontalAlignment = HorizontalAlignment.Center,
                     VerticalAlignment = VerticalAlignment.Center,
                     Foreground = Brushes.DarkRed,
-                    Text = "خطا در ترسیم"
+                    Text = "Error in drawing shapes."
                 };
                 visualView.Children.Add(errorDrawing);
             }
-           
+
         }
         #endregion
 
@@ -118,10 +118,8 @@ namespace GuilanDataStructures.Projects.Project1
               {
                 Dispatcher.Invoke(() => { DrawVisualRectangles(token); });
               });
-                
 
               int maxArea = CalculateMaximumArea(Array.ConvertAll(token, int.Parse));
-
 
               resultTextBox.Background = Brushes.White;
               resultTextBox.Text = maxArea.ToString();
@@ -132,7 +130,7 @@ namespace GuilanDataStructures.Projects.Project1
                 try
                 {
                     resultTextBox.Background = Brushes.LightPink;
-                    resultTextBox.Text = "خطا در محاسبه";
+                    resultTextBox.Text = "Error in calculations.";
                 }
                 catch { }
 
@@ -144,7 +142,7 @@ namespace GuilanDataStructures.Projects.Project1
             if(inputTextBox.Text == string.Empty)
             {
                 resultTextBox.Background = Brushes.LightYellow;
-                resultTextBox.Text = "لطفا مقداری را وارد نمایید";
+                resultTextBox.Text = "Please input a value.";
 
                 // Dispaly there is no data to preview in viewport
                 Task.Run(() =>
@@ -154,7 +152,6 @@ namespace GuilanDataStructures.Projects.Project1
 
             }
             else CalculationProcess();
-
 
         }
 
@@ -192,7 +189,7 @@ namespace GuilanDataStructures.Projects.Project1
                     int area = heights[popedValue] * calculationFactor;
 
                     if (area > result) result = area;
-                   
+
                 }
             }
             // Recalculate un-empty stack using method above in "else" block
@@ -222,12 +219,11 @@ namespace GuilanDataStructures.Projects.Project1
             string[] token = inputTextBox.Text.TrimEnd(' ').Split(' ');
             int tokenLen = token.Length;
 
-       
                 Task.Run(() =>
                 {
                     Dispatcher.Invoke(() => { DrawVisualRectangles(token); });
                 });
-           
+
         }
     }
 }

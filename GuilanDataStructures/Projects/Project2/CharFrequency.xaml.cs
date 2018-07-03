@@ -21,7 +21,6 @@ namespace GuilanDataStructures.Projects.Project2
     public partial class CharFrequency : UserControl
     {
 
-
         public bool IsBlue { get; set; }
         public char Character { get; set; }
         public int Frequency { get; set; }
@@ -29,13 +28,9 @@ namespace GuilanDataStructures.Projects.Project2
         public CharFrequency(char c, int f, bool isBlue)
         {
 
-
             Character = c; Frequency = f; IsBlue = isBlue;
 
-     
-
             InitializeComponent();
-
 
             @char.Text = Character.ToString();
             freq.Text = Frequency.ToString();

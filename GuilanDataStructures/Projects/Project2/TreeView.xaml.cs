@@ -26,7 +26,6 @@ namespace GuilanDataStructures.Projects.Project2
 
         public CompressedText ReturnPage { get; set; }
         public DataStructures.Huffman.BinaryTree Tree { get; set; }
-        
 
         public TreeView(CompressedText r, BinaryTree t)
         {
@@ -74,7 +73,6 @@ namespace GuilanDataStructures.Projects.Project2
 
                 node.Content = tBlock;
             }
-
 
             if (tree.Right != null) AddTree(tree.Right, node, Brushes.PaleVioletRed);
 

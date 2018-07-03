@@ -31,7 +31,6 @@ namespace GuilanDataStructures.Projects.Project3
             InitializeComponent();
         }
 
-
         private void TextBox_Loaded(object sender, RoutedEventArgs e)
         {
             if (!TextBoxLoadOnce)
@@ -40,8 +39,6 @@ namespace GuilanDataStructures.Projects.Project3
                 inputTextbox.Text = "a/3 b/6 c/4 d/7 e/2 f/5 g/1";
                 TextBoxLoadOnce = true;
 
-                
-                
             }
         }
 
@@ -89,23 +86,19 @@ namespace GuilanDataStructures.Projects.Project3
                 AddTree(treap.Left, root);
                 AddTree(treap.Right, root);
 
-
                 if (hasLeft && !hasRight)
                 {
                     var noElementTree = baseTree.AddNode(treap, root);
                     noElementTree.Content = new NullChild(false);
                 }
 
-
-
-
             }
             catch {
                 warningText.Visibility = Visibility.Visible;
                 baseTree.Visibility = Visibility.Collapsed;
-                outputText.Text = "فرمت ورودی معتبر نیست";
+                outputText.Text = "Input format is not valid.";
             }
-             
+
         }
 
         private void AddTree(Treap<char> tree, TreeNode parent)
@@ -113,7 +106,6 @@ namespace GuilanDataStructures.Projects.Project3
             if (tree == null) return;
 
             TreeNode node;
-
 
             node = baseTree.AddNode(tree, parent);
             var tBlock = new TextBlock();
@@ -134,22 +126,13 @@ namespace GuilanDataStructures.Projects.Project3
 
             if (tree.Right != null) AddTree(tree.Right, node);
 
-
-        
-
             if (hasLeft && !hasRight)
             {
                 var noElementTree = baseTree.AddNode(tree, node);
                 noElementTree.Content = new NullChild(false);
             }
-       
 
-           
-      
-
-          
         }
 
-       
     }
 }

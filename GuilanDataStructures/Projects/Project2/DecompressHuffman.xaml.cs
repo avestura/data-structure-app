@@ -27,7 +27,6 @@ namespace GuilanDataStructures.Projects.Project2
             InitializeComponent();
         }
 
-
         private void openInput(object sender, RoutedEventArgs e)
         {
             var openDialog = new OpenFileDialog();
@@ -42,27 +41,25 @@ namespace GuilanDataStructures.Projects.Project2
                 outputURLTextbox.Text = openDialog.FileName;
         }
 
-       
-
         private void decodeHuffman_Click(object sender, RoutedEventArgs e)
         {
             decodeHuffman.IsEnabled = false;
-            decodeHuffman.Content = "در حال بازگردانی متن...";
+            decodeHuffman.Content = "Decompressing...";
             Task.Factory.StartNew(() =>
             {
                 Thread.Sleep(100);
 
                 Dispatcher.Invoke(() =>
                 {
-                    
+
                     new DataStructures.Huffman.Decoder().Decode(inputURLTextbox.Text, outputURLTextbox.Text);
 
                     decodeHuffman.IsEnabled = true;
-                    decodeHuffman.Content = "بازگردانی فایل فشرده شده به فایل متنی";
+                    decodeHuffman.Content = "Decompress file to a text file";
                 });
 
             });
-            
+
         }
     }
 }

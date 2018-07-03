@@ -21,7 +21,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
     /// </summary>
     public partial class ResizableButtonBox : UserControl
     {
-        
 
         public bool HasStartPoint { get { return MazeStartPoint != null; } }
         public bool HasEndPoint { get { return MazeEndPoint != null; } }
@@ -34,9 +33,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
         public MazeButton MazeStartPoint { get; set; }
         public MazeButton MazeEndPoint { get; set; }
 
-
-
-
         public bool UseDFS
         {
             get { return (bool)GetValue(UseDFSProperty); }
@@ -46,16 +42,12 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
         public static readonly DependencyProperty UseDFSProperty =
             DependencyProperty.Register("UseDFS", typeof(bool), typeof(ResizableButtonBox), null);
 
-
-
-
         public ResizableButtonBox()
         {
             InitializeComponent();
-            
+
         }
 
- 
         private void mainArea_SizeChanged(object sender, SizeChangedEventArgs e)
         {
 
@@ -73,16 +65,14 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
             mainArea.Children.Clear();
             mainArea.Background = Brushes.LightBlue;
 
-
             rect.Stroke = Brushes.Blue;
             rect.StrokeDashArray = new DoubleCollection(new double[] { 4, 4});
 
-      
         }
 
         private void Thumb_DragDelta(object sender, System.Windows.Controls.Primitives.DragDeltaEventArgs e)
         {
-            
+
             int horizontalChange = (int)e.HorizontalChange;
             int verticalChange = (int)e.VerticalChange;
 
@@ -93,20 +83,17 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
             {
                 canvas.Width += horizontalChange;
                 Canvas.SetLeft(areaText, (canvas.ActualWidth - areaText.ActualWidth)/2d);
-                areaText.Text = $"{(int)canvas.ActualWidth / 20} در {(int)canvas.ActualHeight / 20}";
-
+                areaText.Text = $"{(int)canvas.ActualWidth / 20} x {(int)canvas.ActualHeight / 20}";
 
             }
             if (newVerticalSizeAvailable)
             {
                 canvas.Height += verticalChange;
                 Canvas.SetTop(areaText, (canvas.ActualHeight - areaText.ActualHeight) / 2d);
-                areaText.Text = $"{(int)canvas.ActualWidth / 20} در {(int)canvas.ActualHeight / 20}";
-
+                areaText.Text = $"{(int)canvas.ActualWidth / 20} x {(int)canvas.ActualHeight / 20}";
 
             }
         }
-
 
         public void RecreateButtons(int buttons)
         {
@@ -130,7 +117,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                 mainArea.Children.Add(createdButton);
             }
 
-
         }
 
         private void Thumb_DragCompleted(object sender, System.Windows.Controls.Primitives.DragCompletedEventArgs e)
@@ -153,16 +139,15 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
 
         private void Thumb_DragOver(object sender, DragEventArgs e)
         {
-            
+
         }
 
-        
         public void CreatePathUsingDFS(MazeButton mazeButton)
         {
             mazeButton.IsVisited = true;
 
             int buttonIndex = ButtonsList.IndexOf(mazeButton);
-            
+
             foreach (var btn in GetAdjacent(buttonIndex))
             {
                 if (!btn.IsVisited && !btn.IsBlock)
@@ -173,8 +158,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                 }
 
             }
-
-            
 
         }
 
@@ -200,14 +183,13 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                     {
                         btn.Previous = e;
                         btn.IsVisited = true;
-                      
+
                         queue.Enqueue(btn);
-                       
+
                     }
                 }
             }
         }
-
 
         public bool HasNorth(int index) { return index >= MazeWidth; }
         public int GetNorth(int index) { return index - MazeWidth; }
@@ -233,10 +215,7 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
             return adj.ToArray();
         }
 
-
     }
-
-
 
     public class HeighDecreaser : IValueConverter
         {
@@ -252,7 +231,5 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
             return val + 2;
             }
         }
-
-
 
 }

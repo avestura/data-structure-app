@@ -29,12 +29,12 @@ namespace GuilanDataStructures.Projects.Project3
 
             if (isLeft)
             {
-                textBlock.Text = "بدون چپ";
+                textBlock.Text = "Without Left";
                 control.Margin = new Thickness(-15, 0, 0, 0);
             }
             else
             {
-                textBlock.Text = "بدون راست";
+                textBlock.Text = "Without Right";
                 control.Margin = new Thickness(-10, 0, 0, 0);
             }
         }

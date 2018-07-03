@@ -16,41 +16,37 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
     public class MazeButton : System.Windows.Controls.Button
     {
 
-        
-
         public ResizableButtonBox Father { get; set; }
-        
+
         public bool IsStartPoint
         {
             get { return (bool)GetValue(IsStartPointProperty); }
             set { SetValue(IsStartPointProperty, value); }
         }
-        
+
         public bool IsEndPoint
         {
             get { return (bool)GetValue(IsEndPointProperty); }
             set { SetValue(IsEndPointProperty, value); }
         }
-        
+
         public bool IsBlock
         {
             get { return (bool)GetValue(IsBlockProperty); }
             set { SetValue(IsBlockProperty, value); }
         }
-        
+
         public bool IsVisited
         {
             get { return (bool)GetValue(IsVisitedProperty); }
             set { SetValue(IsVisitedProperty, value); }
         }
-        
+
         public MazeButton Previous
         {
             get { return (MazeButton)GetValue(PreviousProperty); }
             set { SetValue(PreviousProperty, value); }
         }
-
-
 
         public MazeButton Next
         {
@@ -63,10 +59,10 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
 
         public static readonly DependencyProperty PreviousProperty =
             DependencyProperty.Register("Previous", typeof(MazeButton), typeof(MazeButton), null);
-        
+
         public static readonly DependencyProperty IsVisitedProperty =
             DependencyProperty.Register("IsVisited", typeof(bool), typeof(MazeButton), null);
-        
+
         public static readonly DependencyProperty IsBlockProperty =
             DependencyProperty.Register("IsBlock", typeof(bool), typeof(MazeButton), null);
 
@@ -75,9 +71,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
 
         public static readonly DependencyProperty IsStartPointProperty =
             DependencyProperty.Register("IsStartPoint", typeof(bool), typeof(MazeButton), null);
-
-
-
 
         public MazeButton() : base()
         {
@@ -93,7 +86,7 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                     IsBlock = (IsBlock) ? false : true;
 
                     CheckFatherPanelForPath();
-                    
+
                 }
 
             };
@@ -147,14 +140,12 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                         CheckFatherPanelForPath();
 
                     }
-                    
+
                 }
 
-
             };
-            
-        }
 
+        }
 
         public void ResetFatherScene()
         {
@@ -171,8 +162,7 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
             }
         }
 
-        
-     public async void CheckFatherPanelForPath()
+     public  void CheckFatherPanelForPath()
         {
             if (Father.HasEndPoint && Father.HasStartPoint)
             {
@@ -186,7 +176,7 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
 
                 var temp = Father.MazeEndPoint;
                 var tempPrev = Father.MazeEndPoint.Previous;
-                
+
                 while (tempPrev != null && tempPrev != Father.MazeStartPoint)
                 {
                     tempPrev.Next = temp;
@@ -206,10 +196,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                     // Graphical Paths for DFS and BFS
                     if (Father.UseDFS)
                     {
-
-                   
-
-
 
                                 if (prevIndex == Father.GetNorth(tempIndex))
                                 {
@@ -287,10 +273,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                                     }
                                 }
 
-
-                      
-
-
                     }
                     else
                     {
@@ -309,8 +291,6 @@ namespace GuilanDataStructures.CommonControls.ButtonBoxControls
                 }
             }
         }
-        
-
 
     }
 }

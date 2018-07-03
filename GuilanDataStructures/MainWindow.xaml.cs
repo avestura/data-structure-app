@@ -25,28 +25,19 @@ namespace GuilanDataStructures
     public partial class MainWindow : Window
     {
 
-
-
          ProjectSelector selectorPage = new ProjectSelector();
-
 
         public MainWindow()
         {
-            
+
             InitializeComponent();
             //selectProjectCombo.ItemsSource = projects;
             App.MainWindowApp = this;
-            
+
         }
-
-
-
-   
 
         private void mainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            
-
 
         }
 

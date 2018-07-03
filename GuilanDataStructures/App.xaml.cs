@@ -22,8 +22,6 @@ namespace GuilanDataStructures
         {
             base.OnStartup(e);
 
-            CultureInfo.DefaultThreadCurrentCulture = new CultureInfo("fa-IR");
-            CultureInfo.DefaultThreadCurrentUICulture = new CultureInfo("fa-IR");
         }
     }
 }

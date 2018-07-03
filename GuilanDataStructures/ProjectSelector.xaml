@@ -1,21 +1,28 @@
-﻿<Page x:Class="GuilanDataStructures.ProjectSelector"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:cc="clr-namespace:GuilanDataStructures.CommonControls"
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
-      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-      xmlns:local="clr-namespace:GuilanDataStructures"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      x:Name="page" Title="ProjectSelector" d:DesignHeight="800"
-      d:DesignWidth="1000" mc:Ignorable="d">
+﻿<Page
+    x:Class="GuilanDataStructures.ProjectSelector"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cc="clr-namespace:GuilanDataStructures.CommonControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:local="clr-namespace:GuilanDataStructures"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="page"
+    Title="ProjectSelector"
+    d:DesignHeight="800"
+    d:DesignWidth="1000"
+    mc:Ignorable="d">
     <Page.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard>
                 <Storyboard>
-                    <DoubleAnimation Storyboard.TargetName="page"
-                                     Storyboard.TargetProperty="Opacity" From="0" To="1"
-                                     Duration="0:0:0.5" />
+                    <DoubleAnimation
+                        Storyboard.TargetName="page"
+                        Storyboard.TargetProperty="Opacity"
+                        From="0"
+                        To="1"
+                        Duration="0:0:0.5" />
                 </Storyboard>
             </BeginStoryboard>
         </EventTrigger>
@@ -28,8 +35,7 @@
     </Page.Background>
 
     <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-        <WrapPanel Margin="10" FlowDirection="RightToLeft"
-                   Orientation="Horizontal">
+        <WrapPanel Margin="10" Orientation="Horizontal">
             <i:Interaction.Behaviors>
                 <ei:FluidMoveBehavior AppliesTo="Children" Duration="0:0:0.5">
                     <ei:FluidMoveBehavior.EaseY>
@@ -40,35 +46,45 @@
                     </ei:FluidMoveBehavior.EaseX>
                 </ei:FluidMoveBehavior>
             </i:Interaction.Behaviors>
-            <cc:ProjectCard x:Name="mostatilCard"
-                            ClickedViewProject="mostatilCard_ClickedViewProject"
-                            ImageSource="/Resources/Images/Left View-64.png"
-                            Programmer="ابراهیم پور" ProgrammingLanguage="سی شارپ"
-                            ProjectTitle="برش مستطیل" QuestionDesigner="استاد میرروشندل"
-                            Tags="پشته" />
+            <cc:ProjectCard
+                x:Name="mostatilCard"
+                ClickedViewProject="mostatilCard_ClickedViewProject"
+                ImageSource="/Resources/Images/Left View-64.png"
+                Programmer="0xaryan"
+                ProgrammingLanguage="C#"
+                ProjectTitle="Cutting Rectangles"
+                QuestionDesigner="Dr. Mirroshandel"
+                Tags="Stack" />
 
-            <cc:ProjectCard x:Name="compressCard"
-                            ClickedViewProject="compressCard_ClickedViewProject"
-                            ImageSource="/Resources/Images/Archive-64.png"
-                            Programmer="ابراهیم پور" ProgrammingLanguage="سی شارپ"
-                            ProjectTitle="فشرده سازی متن"
-                            QuestionDesigner="استاد میرروشندل"
-                            Tags="صف اولویت، بازگشتی، درخت دودویی" />
+            <cc:ProjectCard
+                x:Name="compressCard"
+                ClickedViewProject="compressCard_ClickedViewProject"
+                ImageSource="/Resources/Images/Archive-64.png"
+                Programmer="0xaryan"
+                ProgrammingLanguage="C#"
+                ProjectTitle="Text Compressing"
+                QuestionDesigner="Dr. Mirroshandel"
+                Tags="Priority Queue, Recursive, Binary Tree" />
 
-            <cc:ProjectCard x:Name="treapCard"
-                            ClickedViewProject="treapCard_ClickedViewProject"
-                            ImageSource="/Resources/Images/Pyramids-64.png"
-                            Programmer="ابراهیم پور" ProgrammingLanguage="سی شارپ"
-                            ProjectTitle="هرم جستجوی دودویی"
-                            QuestionDesigner="استاد میرروشندل"
-                            Tags="بازگشتی، درخت دودویی، درخت اولویت" />
+            <cc:ProjectCard
+                x:Name="treapCard"
+                ClickedViewProject="treapCard_ClickedViewProject"
+                ImageSource="/Resources/Images/Pyramids-64.png"
+                Programmer="0xaryan"
+                ProgrammingLanguage="C#"
+                ProjectTitle="Heap Binary Search"
+                QuestionDesigner="Dr. Mirroshandel"
+                Tags="Priority Tree, Binary Tree, Recursive" />
 
-            <cc:ProjectCard x:Name="mazeCard"
-                            ClickedViewProject="mazeCard_ClickedViewProject"
-                            ImageSource="/Resources/Images/Hard to Find-64.png"
-                            Programmer="ابراهیم پور" ProgrammingLanguage="سی شارپ"
-                            ProjectTitle="بازی مسیر یابی مارپیچ"
-                            QuestionDesigner="استاد میرروشندل" Tags="جستجوی اول عمقی" />
+            <cc:ProjectCard
+                x:Name="mazeCard"
+                ClickedViewProject="mazeCard_ClickedViewProject"
+                ImageSource="/Resources/Images/Hard to Find-64.png"
+                Programmer="0xaryan"
+                ProgrammingLanguage="C#"
+                ProjectTitle="Maze Routing"
+                QuestionDesigner="Dr. Mirroshandel"
+                Tags="DFS, BFS" />
         </WrapPanel>
     </ScrollViewer>
 </Page>
